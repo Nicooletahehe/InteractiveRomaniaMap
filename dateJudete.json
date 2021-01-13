@@ -1,6 +1,6 @@
 [
-    {"nume": "Neamt",
-    "municipiu": "Piatra Neamt",
+    {"nume": "Neamț",
+    "municipiu": "Piatra Neamț",
     "populatie": 23454,
     "suprafata": 123,
     "densitate": 23,
@@ -13,8 +13,8 @@
         "densitate": 43,
         "somaj": 12
     },
-    {"nume": "Bucuresti",
-        "municipiu": "Bucuresti",
+    {"nume": "București",
+        "municipiu": "București",
         "populatie": 54654,
         "suprafata": 545,
         "densitate": 34,
