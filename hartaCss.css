@@ -1,28 +1,13 @@
 #divTitlu {
-    width:900px;
-    height: 50px;
-    position:absolute;
-    top:50px;
-    right:0;
-    left: 0;
-    margin:auto;
     text-align: center;
     font-size: 30px;
 }
 
 #svgHartaRomaniei{
-    width:900px;
-    height: 650px;
-    position:absolute;
-    top:0;
-    bottom:0;
-    right:0;
-    left: 0;
-    margin:auto;
     text-align: center;
-    background-color:rgba(52, 41, 90, 0.116);
-    border:1px solid black;
-    box-shadow: 20px 20px 50px 15px grey;
+    background-color:rgba(52, 41, 90, 0.116)!important;
+    /* border:1px solid black;
+    box-shadow: 20px 20px 50px 15px grey; */
 }
 
 #rangeAni {
@@ -58,6 +43,10 @@
 
 #tabelJudet{
     display: none;
+}
+#tabelJudet table{
+    margin: 15px;
+    width: calc(100% - 30px);
 }
 
 #labelAni {
