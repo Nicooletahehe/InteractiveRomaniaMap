@@ -1,0 +1,75 @@
+#divTitlu {
+    width:900px;
+    height: 50px;
+    position:absolute;
+    top:50px;
+    right:0;
+    left: 0;
+    margin:auto;
+    text-align: center;
+    font-size: 30px;
+}
+
+#svgHartaRomaniei{
+    width:900px;
+    height: 650px;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left: 0;
+    margin:auto;
+    text-align: center;
+    background-color:rgba(52, 41, 90, 0.116);
+    border:1px solid black;
+    box-shadow: 20px 20px 50px 15px grey;
+}
+
+#rangeAni {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 5px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    /* transform-origin: 75px 75px;
+    transform: rotate(90deg); */
+}
+
+#rangeAni::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: green;
+    cursor: pointer;
+}
+
+#rangeAni::-moz-range-thumb {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+#tabelJudet{
+    display: none;
+}
+
+#labelAni {
+    text-align: center;
+}
+
+svg{
+    stroke:rgb(52, 41, 90);
+    stroke-width: 2px;
+    transition: fill 0.3s;
+}
+
+svg path:hover{
+    fill:rgb(52, 41, 90);
+}
