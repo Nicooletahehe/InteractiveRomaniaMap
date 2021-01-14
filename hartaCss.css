@@ -15,6 +15,10 @@
     #noData {
         font-size: 10px;
     }
+
+    #legendLista span {
+        margin: 0px;
+    }
 }
 
 #divTitlu {
