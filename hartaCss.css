@@ -1,3 +1,8 @@
+/* change all .btn to .btn-sm size on xs */
+/* @media (min-width: 576px) {
+    
+} */
+
 #divTitlu {
     text-align: center;
     font-size: 30px;
