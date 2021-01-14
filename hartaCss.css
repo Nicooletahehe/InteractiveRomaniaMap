@@ -1,11 +1,68 @@
 #divTitlu {
     text-align: center;
     font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+legend{
+    border-bottom: 1px solid black;
+    padding-bottom: 3px;
+    font-size: 20px;
+}
+
+#legenda{
+    position:absolute;
+    top:10px;
+    right:10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+}
+
+#legenda ul{
+    margin-bottom:0px;
+}
+
+#legendLista {
+    list-style:none;
+    line-height: 0.9;
+    padding-left: 0;
+}
+#legendLista li {
+    line-height: 1;
+    margin-top: 10px;
+}
+#legendLista span{
+    border: 1px solid #ccc;
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+}
+
+#legendLista .procentMinusUnu { background-color:#0C1C41; }
+#legendLista .procentMinusZeroTrei { background-color: #20325E; }
+#legendLista .procentMinusZeroDoi { background-color: #364975; }
+#legendLista .procentMinusZeroUnu { background-color: #566890; }
+#legendLista .procentZero { background-color: #AFAF45; }
+#legendLista .procentZeroUnu { background-color: #D77777; }
+#legendLista .procentZeroDoi { background-color: #AF4545; }
+#legendLista .procentZeroTrei { background-color: #8C2424; }
+#legendLista .procentUnu { background-color: #610808; }
+
+.patratelLegenda {
+    width: 15px;
+    height: 15px;
+    border:1px solid black;
 }
 
 #svgHartaRomaniei{
+    position: relative;
     text-align: center;
     background-color:rgba(52, 41, 90, 0.116)!important;
+    margin-top: 15px;
     /* border:1px solid black;
     box-shadow: 20px 20px 50px 15px grey; */
 }
