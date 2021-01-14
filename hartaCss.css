@@ -1,10 +1,10 @@
 /* change all .btn to .btn-sm size on xs */
 @media screen and (max-width: 600px) {
     div#legenda legend {
-        font-size: 10px;
+        font-size: 7px;
     }
     div#legenda ul {
-        font-size: 8px;
+        font-size: 5px;
     }
     #divTitlu {
         font-size: 20px !important;

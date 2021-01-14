@@ -24,7 +24,7 @@ myFiles.forEach(function (file, i) {
     })
 })
 
-if(window.innerWidth <570){
+if(window.innerWidth < 774){
     console.log("mai mic");
     let nouaLocatie = document.querySelector("#tabelResponsive");
     nouaLocatie.appendChild(tabel);
@@ -36,7 +36,7 @@ if(window.innerWidth <570){
 window.addEventListener('resize', function(event){
     console.log("ertgfsdad");
     console.log(window.innerWidth);
-    if(window.innerWidth <570){
+    if(window.innerWidth < 774){
         console.log("mai mic");
         let nouaLocatie = document.querySelector("#tabelResponsive");
         nouaLocatie.appendChild(tabel);
