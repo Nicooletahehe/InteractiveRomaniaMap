@@ -23,6 +23,15 @@ myFiles.forEach(function (file, i) {
        
     })
 })
+
+window.addEventListener('resize', function(event){
+    console.log("ertgfsdad");
+    console.log(window.innerWidth);
+    if(window.innerWidth <570){
+        console.log("mai mic");
+    }
+
+})
 //console.log(jsonData);
 //console.log(jsonData[1]);
 

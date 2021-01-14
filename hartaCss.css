@@ -1,7 +1,21 @@
 /* change all .btn to .btn-sm size on xs */
-/* @media (min-width: 576px) {
-    
-} */
+@media screen and (max-width: 600px) {
+    div#legenda legend {
+        font-size: 10px;
+    }
+    div#legenda ul {
+        font-size: 10px;
+    }
+    #divTitlu {
+        font-size: 15px !important;
+    }
+    #labelAni {
+        font-size: 10px;
+    }
+    #noData {
+        font-size: 10px;
+    }
+}
 
 #divTitlu {
     text-align: center;
