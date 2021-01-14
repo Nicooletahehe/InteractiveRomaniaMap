@@ -7,8 +7,3 @@
   <li>De asemenea, în momentul selecționării unui anumit județ, se va încărca în partea stângă a hărții un tabel cu informații despre acel județ în anul selectat prin ‘slider’: Reședința de județ, Populația domiciliată, Suprafață, Densitate și numărul de șomeri.</li>
   <li>Legenda hărții indică procentul de modificare a populației față de anul anterior.</li>
  </ul>
-
-
-
-
-Legenda hărții indică procentul de modificare a populației față de anul anterior.
