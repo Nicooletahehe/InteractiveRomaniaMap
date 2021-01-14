@@ -39,53 +39,66 @@ myFiles.forEach(function (file, i) {
        
     })
 })
-
 console.log(jsonData);
+console.log(jsonData[1]);
 
-//incarcare tabel si colorare judet
-for(let i=0; i<judete.length; i++) {
-    judete[i].addEventListener('click',function(){
-        console.log(jsonData[0]);
-        let numeJudetSVG = judete[i].attributes[2].value;
-        for(let x=0; x<judete.length; x++) {judete[x].style.fill = '';}
-        for(let j=0;j<jsonData.length;j++){
-            console.log(jsonData[0][j]);
-            if(jsonData[0][j].nume === numeJudetSVG){
-                let numeJudetTabel = document.querySelector("#titluJudet");
-                let numeMunicipiuTabel = document.querySelector("#numeMunicipiu");
-                let nrPopulatieTabel = document.querySelector("#nrPopulatie");
-                let suprafataTabel = document.querySelector("#suprafata");
-                let densitateTabel = document.querySelector("#densitate");
-                let somajTabel = document.querySelector("#somaj");
 
-                numeJudetTabel.innerHTML = jsonData[0][j].nume;
-                numeMunicipiuTabel.innerHTML = jsonData[0][j].municipiu;
-                nrPopulatieTabel.innerHTML = jsonData[0][j].populatie;
-                suprafataTabel.innerHTML = jsonData[0][j].suprafata;
-                densitateTabel.innerHTML = jsonData[0][j].densitate;
-                somajTabel.innerHTML = jsonData[0][j].somaj;
-
-                judete[i].style.fill = 'rgb('+52+','+41+','+90+')';
-                tabel.style.display = "block";
-            }
-        }
-    });
-}
-
-//slider
 output.innerHTML = slider.value;
 slider.oninput = function() {
     output.innerHTML = this.value;
-    console.log(slider.value);
-    console.log(jsonData[1]);
-    for(let j=0;j<jsonData.length;j++) {
-        console.log(jsonData[1][j].an);
-        if(jsonData[1][j].an === parseInt(slider.value)){
-            if(jsonData[1][j].judete[0] < 5562){
-                for(let i=0;i<judete.length;i++){
-                    judete[i].style.fill = 'red';
+}
+
+let valoareSlider = document.querySelectorAll("#rangeAni")[0].value;
+function loadTable(e){
+    for(let z=0;z<jsonData[0].length;z++){
+        // console.log(slider.value);
+        // console.log(jsonData[0][z].an);
+        //imi aduca datele de pe anul selectat in slider
+        if(jsonData[0][z].an === parseInt(slider.value)) {
+            console.log("vedefg");
+            //verific numele judetului selectat, si incarc doar acele date
+            let numeJudetSVG = judete[e].attributes[2].value;
+            for(let j=0;j<jsonData[0][z].date.length;j++){
+                console.log(jsonData[0][z].date[j].nume);
+                if(jsonData[0][z].date[j].nume === numeJudetSVG){
+                    console.log(jsonData[0][z].date[j].nume);
+                    let numeJudetTabel = document.querySelector("#titluJudet");
+                    let numeMunicipiuTabel = document.querySelector("#numeMunicipiu");
+                    let nrPopulatieTabel = document.querySelector("#nrPopulatie");
+                    let suprafataTabel = document.querySelector("#suprafata");
+                    let densitateTabel = document.querySelector("#densitate");
+                    let somajTabel = document.querySelector("#somaj");
+                    let anTabel = document.querySelector("#anTabel");
+                    console.log(jsonData[0][z].an);
+                    numeJudetTabel.innerHTML = jsonData[0][z].date[j].nume;
+                    numeMunicipiuTabel.innerHTML = jsonData[0][z].date[j].municipiu;
+                    nrPopulatieTabel.innerHTML = jsonData[0][z].date[j].populatie;
+                    suprafataTabel.innerHTML = jsonData[0][z].date[j].suprafata;
+                    densitateTabel.innerHTML = jsonData[0][z].date[j].densitate;
+                    somajTabel.innerHTML = jsonData[0][z].date[j].somaj;
+                    anTabel.innerHTML = jsonData[0][z].an;
                 }
             }
         }
     }
 }
+
+//incarcare tabel si colorare judet
+function clickJudet() {
+    for(let i=0; i<judete.length; i++) {
+        //la click pe judet imi caut datele din anul selectat din slider pentru a le incarca
+        judete[i].addEventListener('click',function(){
+            console.log(judete[i].style.fill);
+            //decoloreaza ce era selectat inainte
+            // for(let x=0; x<judete.length; x++) {judete[x].style.fill = '';}
+            //parcurg datele din json
+            loadTable(i);
+            judete[i].style.fill = 'rgb('+52+','+41+','+90+')';
+            tabel.style.display = "block";
+        });
+    }
+}
+
+clickJudet();
+
+
