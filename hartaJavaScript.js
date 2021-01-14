@@ -24,13 +24,26 @@ myFiles.forEach(function (file, i) {
     })
 })
 
+if(window.innerWidth <570){
+    console.log("mai mic");
+    let nouaLocatie = document.querySelector("#tabelResponsive");
+    nouaLocatie.appendChild(tabel);
+} else {
+    let vecheaLocatie = document.querySelector("#tabelPagNormala");
+    vecheaLocatie.appendChild(tabel);
+}
+
 window.addEventListener('resize', function(event){
     console.log("ertgfsdad");
     console.log(window.innerWidth);
     if(window.innerWidth <570){
         console.log("mai mic");
+        let nouaLocatie = document.querySelector("#tabelResponsive");
+        nouaLocatie.appendChild(tabel);
+    } else {
+        let vecheaLocatie = document.querySelector("#tabelPagNormala");
+        vecheaLocatie.appendChild(tabel);
     }
-
 })
 //console.log(jsonData);
 //console.log(jsonData[1]);
