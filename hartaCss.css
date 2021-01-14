@@ -1,5 +1,9 @@
 /* change all .btn to .btn-sm size on xs */
 @media screen and (max-width: 600px) {
+    div#legenda {
+        top: 5px;
+        right: 5px;
+    }
     div#legenda legend {
         font-size: 9px;
     }
@@ -36,8 +40,8 @@
         display: inline-grid;
         float: left;
         position: absolute;
-        left: 20px;
-        top: 2.5rem;
+        left: 10px;
+        top: 1.5rem;
     }
 
     li {
