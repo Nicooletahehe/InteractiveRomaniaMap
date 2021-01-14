@@ -23,24 +23,23 @@ myFiles.forEach(function (file, i) {
        
     })
 })
-console.log(jsonData);
-console.log(jsonData[1]);
+//console.log(jsonData);
+//console.log(jsonData[1]);
 
 //slider
 output.innerHTML = slider.value;
 slider.oninput = function () {
-    //depastrat
-    var procentualArray = []
+
+    tabel.style.display = "none";
+    judetSelectat = null;
+    judetHoverat = null;
     output.innerHTML = this.value;
+
     for (let i = 0; i < judete.length; i++) {
 
-        //console.log(jsonData[0]);
+
         let numeJudetSVG = judete[i].attributes[2].value;
-        //for (let x = 0; x < judete.length; x++) { judete[x].style.fill = ''; }
         for (let j = 0; j < jsonData[2].length; j++) {
-            //console.log(jsonData[0][i]);
-            // console.log(numeJudetSVG)
-            // console.log(jsonData[2][j][0])
             if (jsonData[2][j][0] === numeJudetSVG) {
                 
                 if (this.value <= 1992) {
@@ -50,7 +49,7 @@ slider.oninput = function () {
                 else {
                     document.querySelector("#noData").style.display = 'none';
                     let procentData = jsonData[2][j][this.value - 1992]
-                    //console.log(procentData)
+
                     if (procentData < -1) {
                         judete[i].style.fill = "#0C1C41";
                     }
@@ -125,12 +124,33 @@ function loadTable(e){
     }
 }
 
+//adaugare mouseover
+
+
+function highlightPath(x){
+    x.style.fill = "#000000"
+}
+
+
+let judetSelectat;
+let culoareSelectata;
+
+let judetHoverat;
+let culoareHoverata;
+
 //incarcare tabel si colorare judet
 function clickJudet() {
     for(let i=0; i<judete.length; i++) {
         //la click pe judet imi caut datele din anul selectat din slider pentru a le incarca
         judete[i].addEventListener('click',function(){
-            console.log(judete[i].style.fill);
+            //console.log(judete[i].style.fill);
+            if(judetSelectat != null){
+                //judete[judetHoverat].style.fill = culoareHoverata;
+                judete[judetSelectat].style.fill = culoareSelectata;
+            }
+
+            culoareSelectata = culoareHoverata;
+            judetSelectat = i;
             //decoloreaza ce era selectat inainte
             // for(let x=0; x<judete.length; x++) {judete[x].style.fill = '';}
             //parcurg datele din json
@@ -138,6 +158,28 @@ function clickJudet() {
             judete[i].style.fill = 'rgb('+52+','+41+','+90+')';
             tabel.style.display = "block";
         });
+
+        judete[i].addEventListener('mouseover',function(){
+            if(judetHoverat != null && judetHoverat != judetSelectat){
+                judete[judetHoverat].style.fill = culoareHoverata;
+            }
+
+            culoareHoverata = judete[i].style.fill;
+            judetHoverat = i;
+
+            
+            judete[i].style.fill = 'rgb('+52+','+41+','+90+')';
+            
+        });
+
+        // judete[i].addEventListener('mouseleave',function(){
+        //     if(judete[judetSelectat] === judete[judetHoverat]){
+        //         judete[i].style.fill = 'rgb('+52+','+41+','+90+')'
+        //     }
+        //      //judete[judetHoverat].style.fill = culoareHoverata;
+            
+        // });
+
     }
 }
 
