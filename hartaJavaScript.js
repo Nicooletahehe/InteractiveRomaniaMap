@@ -165,8 +165,14 @@ function loadTable(e){
                     numeMunicipiuTabel.innerHTML = jsonData[0][z].date[j].municipiu;
                     nrPopulatieTabel.innerHTML = jsonPopSeparator;
                     suprafataTabel.innerHTML = jsonSupSeparator + ' km2';
-                    let jsonSuprafataZecimal = parseFloat(jsonData[0][z].date[j].densitate.replace(/,/g, '.')).toFixed(2);
-                    densitateTabel.innerHTML = jsonSuprafataZecimal + '/km2';
+                    console.log(jsonData[0][z].date[j].densitate);
+                    if(jsonData[0][z].date[j].densitate === 0){
+                        densitateTabel.innerHTML = jsonData[0][z].date[j].densitate + '/km2';
+                    } else {
+                        let jsonSuprafataZecimal = parseFloat(jsonData[0][z].date[j].densitate.replace(/,/g, '.')).toFixed(2);
+                        densitateTabel.innerHTML = jsonSuprafataZecimal + '/km2';
+                    }
+                    
                     somajTabel.innerHTML = jsonSomSeparator;
                     anTabel.innerHTML = jsonData[0][z].an;
                 }

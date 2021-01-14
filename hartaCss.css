@@ -1,7 +1,7 @@
 /* change all .btn to .btn-sm size on xs */
 @media screen and (max-width: 600px) {
     div#legenda {
-        top: 5px;
+        top: 3px;
         right: 5px;
     }
     div#legenda legend {
