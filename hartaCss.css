@@ -21,9 +21,9 @@
     }
 
     #divDescriereLegenda{
-        font-size: 7px;
-        bottom: -11px;
-        right: 3px;
+        font-size: 7px !important;
+        bottom: -11px !important;
+        right: 3px !important;
     }
 
     .btn {
