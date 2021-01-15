@@ -2,7 +2,7 @@
 @media screen and (max-width: 600px) {
     div.legenda {
         top: 3px;
-        right: 5px;
+        right: 3px;
     }
     div.legenda legend {
         font-size: 9px;
