@@ -59,6 +59,7 @@
                         Harta Interactivă a României<br>
                         <small id="titluHarta" class="text-muted">1992 - 2020</small>
                     </h3>
+                    
                     <div id="svgHartaRomaniei" class="border border-secondary shadow-lg p-3 mb-5 bg-white rounded align-middle">
                         <div id="schimbDate" class="">
                             <button id="butonPopulatie" type="button" class="btn btn-secondary" name="populatie" data-selected="selected">Populație</button>
@@ -242,13 +243,8 @@
                             <circle cx="416.9" cy="151.6" id="2">
                             </circle>
                         </svg>
-                        <div class="descriereLegenda">
-                            <span id="textDescriereLegenda">
-                                Diferența % a populației față de anul anterior
-                            </span>
-                        </div>
                         <div id="legendaPop" class="legenda shadow">
-                            <legend>Legendă</legend>
+                            <legend>Legendă*</legend>
                             <ul class="legendLista">
                                 <li><span class="procentMinusUnu"></span> &lt;&nbsp;-1.00</li>
                                 <li><span class="procentMinusZeroTrei"></span> &lt;&nbsp;-0.30</li>
@@ -263,7 +259,7 @@
                             </ul>
                         </div>
                         <div id="legendaSomaj" class="legenda shadow">
-                            <legend>Legendă</legend>
+                            <legend>Legendă*</legend>
                             <ul class="legendLista">
                                 <li><span class="procentSnmZeroUnu"></span> 0-1</li>
                                 <li><span class="procentSnmUnuDoi"></span> 1-2</li>
@@ -276,7 +272,7 @@
                             </ul>
                         </div>
                         <div id="legendaNatalitate" class="legenda shadow">
-                            <legend>Legendă</legend>
+                            <legend>Legendă*</legend>
                             <ul class="legendLista">
                                 <li><span class="procentNatSapte"></span> &lt;7</li>
                                 <li><span class="procentNatSapteOpt"></span> 7-8</li>
@@ -289,7 +285,7 @@
                             </ul>
                         </div>
                         <div id="legendaMortalitate" class="legenda shadow">
-                            <legend>Legendă</legend>
+                            <legend>Legendă*</legend>
                             <ul class="legendLista">
                                 <li><span class="procentMortZece"></span> &lt;10</li>
                                 <li><span class="procentMortZece1"></span> 10-11</li>
@@ -306,6 +302,9 @@
                         </div>
                         <label id="labelAni" for="ani"><span id="spanAn"></span></label><br>
                         <span id="noData">Nu există suficiente date.</span>
+                        <span id="textDescriereLegenda">
+                            *Diferența % a populației față de anul anterior
+                        </span>
                     </div>
                 </div>
                 <div class="col-sm" id="tabelResponsive">

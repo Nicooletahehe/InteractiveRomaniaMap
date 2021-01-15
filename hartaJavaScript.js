@@ -286,7 +286,7 @@ for(let n=0;n<butonSelectat.length;n++){
             for (let i = 0; i < judete.length; i++) {
                 incarcDatePeJudetPop(i);
             }
-            descriere.textContent = "Diferența % a populației față de anul anterior";
+            descriere.innerHTML = "*Diferența % a populației față de anul anterior";
             document.querySelector("#legendaPop").style.display = "block";
             document.querySelector("#legendaSomaj").style.display = "none";
             document.querySelector("#legendaNatalitate").style.display = "none";
@@ -299,7 +299,7 @@ for(let n=0;n<butonSelectat.length;n++){
             for (let i = 0; i < judete.length; i++) {
                 incarcDatePeJudetSomaj(i);
             }
-            descriere.textContent = "Rata șomajului la 100 de locuitori";
+            descriere.innerHTML = "*Rata șomajului la 100 de locuitori";
             document.querySelector("#legendaPop").style.display = "none";
             document.querySelector("#legendaSomaj").style.display = "block";
             document.querySelector("#legendaNatalitate").style.display = "none";
@@ -311,7 +311,7 @@ for(let n=0;n<butonSelectat.length;n++){
             for (let i = 0; i < judete.length; i++) {
                 incarcDatePeJudetNatalitate(i);
             }
-            descriere.textContent = "Rata natalității la 1000 de locuitori";
+            descriere.innerHTML = "*Rata natalității la 1000 de locuitori";
             document.querySelector("#legendaPop").style.display = "none";
             document.querySelector("#legendaSomaj").style.display = "none";
             document.querySelector("#legendaNatalitate").style.display = "block";
@@ -323,7 +323,7 @@ for(let n=0;n<butonSelectat.length;n++){
             for (let i = 0; i < judete.length; i++) {
                 incarcDatePeJudetMortalitate(i);
             }
-            descriere.textContent = "Rata mortalității la 1000 de locuitori";
+            descriere.innerHTML = "*Rata mortalității la 1000 de locuitori";
             document.querySelector("#legendaPop").style.display = "none";
             document.querySelector("#legendaSomaj").style.display = "none";
             document.querySelector("#legendaNatalitate").style.display = "none";
@@ -434,12 +434,13 @@ function clickJudet() {
             judetHoverat = i;
             judete[i].style.fill = 'rgb('+52+','+41+','+90+')';
         });
-        // judete[i].addEventListener('mouseleave',function(){
-        //     if(judete[judetSelectat] === judete[judetHoverat]){
-        //         judete[i].style.fill = 'rgb('+52+','+41+','+90+')'
-        //     }
-        //      //judete[judetHoverat].style.fill = culoareHoverata;
-        // });
+        judete[i].addEventListener('mouseleave',function(){
+            console.log("aci");
+            if(judete[judetSelectat] === judete[judetHoverat]){
+                judete[i].style.fill = 'rgb('+52+','+41+','+90+')'
+            }
+             judete[judetHoverat].style.fill = culoareHoverata;
+        });
     }
 }
 
