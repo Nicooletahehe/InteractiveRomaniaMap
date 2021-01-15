@@ -1,13 +1,13 @@
 /* change all .btn to .btn-sm size on xs */
 @media screen and (max-width: 600px) {
-    div#legenda {
+    div.legenda {
         top: 3px;
         right: 5px;
     }
-    div#legenda legend {
+    div.legenda legend {
         font-size: 9px;
     }
-    div#legenda ul {
+    div.legenda ul {
         font-size: 7px;
     }
     #divTitlu {
@@ -65,7 +65,7 @@ legend{
     font-size: 20px;
 }
 
-#legenda{
+.legenda{
     position:absolute;
     top:10px;
     right:10px;
@@ -75,20 +75,20 @@ legend{
     padding: 5px;
 }
 
-#legenda ul{
+.legenda ul{
     margin-bottom:0px;
 }
 
-#legendLista {
+.legendLista {
     list-style:none;
     line-height: 0.9;
     padding-left: 0;
 }
-#legendLista li {
+.legendLista li {
     line-height: 1;
     margin-top: 5px;
 }
-#legendLista span{
+.legendLista span{
     border: 1px solid #ccc;
     float: left;
     width: 12px;
@@ -96,15 +96,24 @@ legend{
     margin: 2px;
 }
 
-#legendLista .procentMinusUnu { background-color:#0C1C41; }
-#legendLista .procentMinusZeroTrei { background-color: #20325E; }
-#legendLista .procentMinusZeroDoi { background-color: #364975; }
-#legendLista .procentMinusZeroUnu { background-color: #566890; }
-#legendLista .procentZero { background-color: #AFAF45; }
-#legendLista .procentZeroUnu { background-color: #D77777; }
-#legendLista .procentZeroDoi { background-color: #AF4545; }
-#legendLista .procentZeroTrei { background-color: #8C2424; }
-#legendLista .procentUnu { background-color: #610808; }
+.legendLista .procentMinusUnu { background-color:#0C1C41; }
+.legendLista .procentMinusZeroTrei { background-color: #20325E; }
+.legendLista .procentMinusZeroDoi { background-color: #364975; }
+.legendLista .procentMinusZeroUnu { background-color: #566890; }
+.legendLista .procentZero { background-color: #AFAF45; }
+.legendLista .procentZeroUnu { background-color: #D77777; }
+.legendLista .procentZeroDoi { background-color: #AF4545; }
+.legendLista .procentZeroTrei { background-color: #8C2424; }
+.legendLista .procentUnu { background-color: #610808; }
+
+.legendLista .procentSnmZeroUnu { background-color:#1A8C17; }
+.legendLista .procentSnmUnuDoi { background-color: #4DA345; }
+.legendLista .procentSnmDoiTrei { background-color: #B3D2A1; }
+.legendLista .procentSnmTreiPatru { background-color: #E6E9CF; }
+.legendLista .procentSnmPatruCinci { background-color: #FFDCCF; }
+.legendLista .procentSnmCinciSase { background-color: #FF7B73; }
+.legendLista .procentSnmSaseSapte { background-color: #FF4A45; }
+.legendLista .procentSnmPesteSapte { background-color: #FF1917; }
 
 .patratelLegenda {
     width: 15px;

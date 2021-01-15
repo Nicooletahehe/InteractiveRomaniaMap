@@ -41,6 +41,14 @@
                                     <td>Șomaj</td>
                                     <td id="somaj"></td>
                                 </tr>
+                                <tr>
+                                    <td>Natalitate</td>
+                                    <td id="somaj"></td>
+                                </tr>
+                                <tr>
+                                    <td>Mortalitate</td>
+                                    <td id="somaj"></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -54,9 +62,9 @@
                     <div id="svgHartaRomaniei" class="border border-secondary shadow-lg p-3 mb-5 bg-white rounded align-middle">
                         <div id="schimbDate" class="">
                             <button id="butonPopulatie" type="button" class="btn btn-secondary" name="populatie" data-selected="selected">Populație</button>
-                            <button id="butonSomaj" type="button" class="btn btn-info" name="somaj">Șomaj</button>
-                            <button id="butonNatalitate" type="button" class="btn btn-success" name="natalitate">Natalitate</button>
-                            <button id="butonDeces" type="button" class="btn btn-light" name="deces">Mortalitate</button>
+                            <button id="butonSomaj" type="button" class="btn btn-secondary" name="somaj">Șomaj</button>
+                            <button id="butonNatalitate" type="button" class="btn btn-secondary" name="natalitate">Natalitate</button>
+                            <button id="butonDeces" type="button" class="btn btn-secondary" name="mortalitate">Mortalitate</button>
                         </div>
                         <svg baseprofile="tiny" fill="#7c7c7c" width="90%" height="30vw" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.2" viewbox="0 0 1000 705" width="1000" xmlns="http://www.w3.org/2000/svg">
                             <a xlink:title="Dolj">
@@ -234,9 +242,9 @@
                             <circle cx="416.9" cy="151.6" id="2">
                             </circle>
                         </svg>
-                        <div id="legenda">
+                        <div id="legendaPop" class="legenda">
                             <legend>Legendă</legend>
-                            <ul id="legendLista">
+                            <ul class="legendLista">
                                 <li><span class="procentMinusUnu"></span> &lt;&nbsp;-1.00</li>
                                 <li><span class="procentMinusZeroTrei"></span> &lt;&nbsp;-0.30</li>
                                 <li><span class="procentMinusZeroDoi"></span> &lt;&nbsp;-0.20</li>
@@ -246,6 +254,19 @@
                                 <li><span class="procentZeroDoi"></span> &gt;&nbsp;&nbsp;0.20</li>
                                 <li><span class="procentZeroTrei"></span> &gt;&nbsp;&nbsp;0.30</li>
                                 <li><span class="procentUnu"></span> &gt;&nbsp;&nbsp;1.00</li>
+                            </ul>
+                        </div>
+                        <div id="legendaSnm" class="legenda">
+                            <legend>Legendă</legend>
+                            <ul class="legendLista">
+                                <li><span class="procentSnmZeroUnu"></span> 0-1</li>
+                                <li><span class="procentSnmUnuDoi"></span> 1-2</li>
+                                <li><span class="procentSnmDoiTrei"></span> 2-3</li>
+                                <li><span class="procentSnmTreiPatru"></span> 3-4</li>
+                                <li><span class="procentSnmPatruCinci"></span> 4-5</li>
+                                <li><span class="procentSnmCinciSase"></span> 5-6</li>
+                                <li><span class="procentSnmSaseSapte"></span> 6-7</li>
+                                <li><span class="procentSnmPesteSapte"></span> 7&gt;</li>
                             </ul>
                         </div>
                         <div class="slidecontainer">
