@@ -437,9 +437,12 @@ function clickJudet() {
         judete[i].addEventListener('mouseleave',function(){
             console.log("aci");
             if(judete[judetSelectat] === judete[judetHoverat]){
+                console.log("aici");
                 judete[i].style.fill = 'rgb('+52+','+41+','+90+')'
+            } else {
+                judete[judetHoverat].style.fill = culoareHoverata;
             }
-             judete[judetHoverat].style.fill = culoareHoverata;
+             
         });
     }
 }
