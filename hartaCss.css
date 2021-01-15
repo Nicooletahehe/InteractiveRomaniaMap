@@ -76,6 +76,18 @@ legend{
     font-size: 12px;
 }
 
+
+.descriereLegenda {
+    position:absolute;
+    top:18px;
+    right:10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+    font-size: 12px;
+}
+
 .legenda{
     position:absolute;
     top:58px;
