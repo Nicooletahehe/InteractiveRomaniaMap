@@ -26,7 +26,7 @@ myFiles.forEach(function (file, i) {
 })
 
 if(window.innerWidth < 774){
-    console.log("mai mic");
+    // console.log("mai mic");
     let nouaLocatie = document.querySelector("#tabelResponsive");
     nouaLocatie.appendChild(tabel);
 } else {
@@ -35,10 +35,10 @@ if(window.innerWidth < 774){
 }
 
 window.addEventListener('resize', function(event){
-    console.log("ertgfsdad");
-    console.log(window.innerWidth);
+    // console.log("ertgfsdad");
+    // console.log(window.innerWidth);
     if(window.innerWidth < 774){
-        console.log("mai mic");
+        // console.log("mai mic");
         let nouaLocatie = document.querySelector("#tabelResponsive");
         nouaLocatie.appendChild(tabel);
     } else {
@@ -102,7 +102,7 @@ function incarcDatePeJudetPop(e) {
     }
 }
 
-function incarcDatePeJudet(e) {
+function incarcDatePeJudetSomaj(e) {
     let numeJudetSVG = judete[e].attributes[2].value;
     // console.log(myFiles);
     for (let j = 0; j < jsonData[indexJson].length; j++) {
@@ -150,28 +150,129 @@ function incarcDatePeJudet(e) {
     }
 }
 
+function incarcDatePeJudetNatalitate(e) {
+    let numeJudetSVG = judete[e].attributes[2].value;
+    // console.log(myFiles);
+    for (let j = 0; j < jsonData[indexJson].length; j++) {
+        // console.log("sau aici");
+        if (jsonData[indexJson][j][0] === numeJudetSVG) {
+            // console.log(jsonData[indexJson][j][0]);
+            // console.log("aproape");
+            if (slider.value <= 1991 || slider.value == 2020) {
+                // console.log("coloreaza");
+                judete[e].style.fill = 'rgb(' + 124 + ',' + 124 + ',' + 124 + ')';
+                document.querySelector("#noData").style.display = 'block';
+            }
+            else {
+                // console.log("al doilea coloreaza");
+                document.querySelector("#noData").style.display = 'none';
+                let procentData = jsonData[indexJson][j][slider.value - 1991]
+                console.log(procentData);
+                console.log(jsonData[indexJson][j][0]);
+                if (procentData > 13) {
+                    judete[e].style.fill = "#1A8C17";
+                }
+                else if (procentData < 13 && procentData > 12) {
+                    judete[e].style.fill = "#4DA345";
+                }
+                else if (procentData < 12 && procentData > 11) {
+                    judete[e].style.fill = "#B3D2A1";
+                }
+                else if (procentData < 11 && procentData > 10.00) {
+                    judete[e].style.fill = "#E6E9CF";
+                }
+                else if (procentData < 10 && procentData > 9) {
+                    judete[e].style.fill = "#FFDCCF";
+                }
+                else if (procentData < 9 && procentData > 8) {
+                    judete[e].style.fill = "#FF7B73";
+                }
+                else if (procentData < 8 && procentData > 7) {
+                    judete[e].style.fill = "#FF4A45";
+                }
+                else if (procentData < 7) {
+                    judete[e].style.fill = "#FF1917";
+                }
+            }
+            break;
+        }
+    }
+}
+
+function incarcDatePeJudetMortalitate(e) {
+    let numeJudetSVG = judete[e].attributes[2].value;
+    // console.log(myFiles);
+    for (let j = 0; j < jsonData[indexJson].length; j++) {
+        // console.log("sau aici");
+        if (jsonData[indexJson][j][0] === numeJudetSVG) {
+            // console.log(jsonData[indexJson][j][0]);
+            // console.log("aproape");
+            if (slider.value <= 1991 || slider.value == 2020) {
+                // console.log("coloreaza");
+                judete[e].style.fill = 'rgb(' + 124 + ',' + 124 + ',' + 124 + ')';
+                document.querySelector("#noData").style.display = 'block';
+            }
+            else {
+                // console.log("al doilea coloreaza");
+                document.querySelector("#noData").style.display = 'none';
+                let procentData = jsonData[indexJson][j][slider.value - 1991]
+                // console.log(procentData);
+                if (procentData < 10) {
+                    judete[e].style.fill = "#1A8C17";
+                }
+                else if (procentData < 11 && procentData > 10) {
+                    judete[e].style.fill = "#4DA345";
+                }
+                else if (procentData < 12 && procentData > 11) {
+                    judete[e].style.fill = "#B3D2A1";
+                }
+                else if (procentData < 13 && procentData > 12) {
+                    judete[e].style.fill = "#E6E9CF";
+                }
+                else if (procentData < 14 && procentData > 13) {
+                    judete[e].style.fill = "#FFDCCF";
+                }
+                else if (procentData < 15 && procentData > 14) {
+                    judete[e].style.fill = "#FF7B73";
+                }
+                else if (procentData < 16 && procentData > 15) {
+                    judete[e].style.fill = "#FF4A45";
+                }
+                else if (procentData > 16) {
+                    judete[e].style.fill = "#FF1917";
+                }
+            }
+            break;
+        }
+    }
+}
+
 function sliderAction() {
     tabel.style.display = "none";
     judetSelectat = null;
     judetHoverat = null;
     output.innerHTML = slider.value;
     for (let i = 0; i < judete.length; i++) {
-        if(selectie ==0){
+        if(selectie ===0){
             incarcDatePeJudetPop(i);
-        } else {
-            incarcDatePeJudet(i);
+        } else if(selectie === 1) {
+            incarcDatePeJudetSomaj(i);
+        } else if(selectie === 2) {
+            incarcDatePeJudetNatalitate(i);
+        } else if(selectie === 3) {
+            incarcDatePeJudetMortalitate(i);
         }
-        
     }
 }
 
 document.querySelector("#legendaPop").style.display = "block";
-document.querySelector("#legendaSnm").style.display = "none";
+document.querySelector("#legendaSomaj").style.display = "none";
+document.querySelector("#legendaNatalitate").style.display = "none";
+document.querySelector("#legendaMortalitate").style.display = "none";
 
 let butonSelectat = document.querySelectorAll("button");
-console.log(butonSelectat);
+// console.log(butonSelectat);
 for(let n=0;n<butonSelectat.length;n++){
-    
     butonSelectat[n].addEventListener('click', function(){
         // console.log(butonSelectat[n].name);
         for(let m=0;m<butonSelectat.length;m++){
@@ -185,35 +286,43 @@ for(let n=0;n<butonSelectat.length;n++){
                 incarcDatePeJudetPop(i);
             }
             document.querySelector("#legendaPop").style.display = "block";
-            document.querySelector("#legendaSnm").style.display = "none";
+            document.querySelector("#legendaSomaj").style.display = "none";
+            document.querySelector("#legendaNatalitate").style.display = "none";
+            document.querySelector("#legendaMortalitate").style.display = "none";
         } else if(butonSelectat[n].name === "somaj"){
             // console.log();
             butonSelectat[n].style.backgroundColor = "#34295A";
             selectie = 1;
             indexJson = 3;
             for (let i = 0; i < judete.length; i++) {
-                incarcDatePeJudet(i);
+                incarcDatePeJudetSomaj(i);
             }
             document.querySelector("#legendaPop").style.display = "none";
-            document.querySelector("#legendaSnm").style.display = "block";
+            document.querySelector("#legendaSomaj").style.display = "block";
+            document.querySelector("#legendaNatalitate").style.display = "none";
+            document.querySelector("#legendaMortalitate").style.display = "none";
         } else if(butonSelectat[n].name === "natalitate"){
             butonSelectat[n].style.backgroundColor = "#34295A";
-            selectie = 1;
+            selectie = 2;
             indexJson = 4;
             for (let i = 0; i < judete.length; i++) {
-                incarcDatePeJudet(i);
+                incarcDatePeJudetNatalitate(i);
             }
             document.querySelector("#legendaPop").style.display = "none";
-            document.querySelector("#legendaSnm").style.display = "block";
+            document.querySelector("#legendaSomaj").style.display = "none";
+            document.querySelector("#legendaNatalitate").style.display = "block";
+            document.querySelector("#legendaMortalitate").style.display = "none";
         } else if(butonSelectat[n].name === "mortalitate"){
             butonSelectat[n].style.backgroundColor = "#34295A";
-            selectie = 1;
+            selectie = 3;
             indexJson = 5;
             for (let i = 0; i < judete.length; i++) {
-                incarcDatePeJudet(i);
+                incarcDatePeJudetMortalitate(i);
             }
             document.querySelector("#legendaPop").style.display = "none";
-            document.querySelector("#legendaSnm").style.display = "block";
+            document.querySelector("#legendaSomaj").style.display = "none";
+            document.querySelector("#legendaNatalitate").style.display = "none";
+            document.querySelector("#legendaMortalitate").style.display = "block";
         }
     })
 }
@@ -244,11 +353,13 @@ function loadTable(e){
                     let suprafataTabel = document.querySelector("#suprafata");
                     let densitateTabel = document.querySelector("#densitate");
                     let somajTabel = document.querySelector("#somaj");
+                    let natalitateTabel = document.querySelector("#natalitate");
+                    let mortalitateTabel = document.querySelector("#mortalitate");
                     let anTabel = document.querySelector("#anTabel");
                     // console.log(jsonData[0][z].an);
                     let jsonPopSeparator = jsonData[0][z].date[j].populatie.toLocaleString('en-US').replace(',', ' ');
                     let jsonSupSeparator = jsonData[0][z].date[j].suprafata.toLocaleString('en-US').replace(',', ' ');
-                    let jsonSomSeparator = jsonData[0][z].date[j].somaj.toLocaleString('en-US').replace(',', ' ');
+                    // let jsonSomSeparator = jsonData[0][z].date[j].somaj.toLocaleString('en-US').replace(',', ' ');
                     numeJudetTabel.innerHTML = jsonData[0][z].date[j].nume;
                     numeMunicipiuTabel.innerHTML = jsonData[0][z].date[j].municipiu;
                     nrPopulatieTabel.innerHTML = jsonPopSeparator;
@@ -260,7 +371,21 @@ function loadTable(e){
                         let jsonSuprafataZecimal = parseFloat(jsonData[0][z].date[j].densitate.replace(/,/g, '.')).toFixed(2);
                         densitateTabel.innerHTML = jsonSuprafataZecimal + '/km2';
                     }
-                    somajTabel.innerHTML = jsonSomSeparator;
+                    if(jsonData[0][z].date[j].somaj === 0 || jsonData[0][z].date[j].populatie === 0){
+                        somajTabel.innerHTML = "Nu avem date de referință.";
+                    } else {
+                        somajTabel.innerHTML = parseFloat(jsonData[0][z].date[j].somaj/jsonData[0][z].date[j].populatie*100).toFixed(2) + "%";
+                    }
+                    if(jsonData[0][z].date[j].natalitate === 0 || jsonData[0][z].date[j].populatie === 0){
+                        natalitateTabel.innerHTML = "Nu avem date de referință.";
+                    } else {
+                        natalitateTabel.innerHTML = parseFloat(jsonData[0][z].date[j].natalitate/jsonData[0][z].date[j].populatie*1000).toFixed(2) + "%";
+                    }
+                    if(jsonData[0][z].date[j].mortalitate === 0 || jsonData[0][z].date[j].populatie === 0){
+                        mortalitateTabel.innerHTML = "Nu avem date de referință.";
+                    } else {
+                        mortalitateTabel.innerHTML = parseFloat(jsonData[0][z].date[j].mortalitate/jsonData[0][z].date[j].populatie*1000).toFixed(2) + "%";
+                    }
                     anTabel.innerHTML = jsonData[0][z].an;
                 }
             }

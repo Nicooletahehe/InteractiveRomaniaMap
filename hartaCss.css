@@ -115,6 +115,24 @@ legend{
 .legendLista .procentSnmSaseSapte { background-color: #FF4A45; }
 .legendLista .procentSnmPesteSapte { background-color: #FF1917; }
 
+.legendLista .procentNatZeceP { background-color:#1A8C17; }
+.legendLista .procentNatZece3 { background-color: #4DA345; }
+.legendLista .procentNatZece2 { background-color: #B3D2A1; }
+.legendLista .procentNatZece1 { background-color: #E6E9CF; }
+.legendLista .procentNatNouaZece { background-color: #FFDCCF; }
+.legendLista .procentNatOptNoua { background-color: #FF7B73; }
+.legendLista .procentNatSapteOpt { background-color: #FF4A45; }
+.legendLista .procentNatSapte { background-color: #FF1917; }
+
+.legendLista .procentMortZece { background-color:#1A8C17; }
+.legendLista .procentMortZece1 { background-color: #4DA345; }
+.legendLista .procentMortZece2 { background-color: #B3D2A1; }
+.legendLista .procentMortZece3 { background-color: #E6E9CF; }
+.legendLista .procentMortZece4 { background-color: #FFDCCF; }
+.legendLista .procentMortZece5 { background-color: #FF7B73; }
+.legendLista .procentMortZece6 { background-color: #FF4A45; }
+.legendLista .procentMortZeceP { background-color: #FF1917; }
+
 .patratelLegenda {
     width: 15px;
     height: 15px;

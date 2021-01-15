@@ -41,13 +41,13 @@
                                     <td>Șomaj</td>
                                     <td id="somaj"></td>
                                 </tr>
-                                <tr>
+                                <tr style="display: none;">
                                     <td>Natalitate</td>
-                                    <td id="somaj"></td>
+                                    <td id="natalitate"></td>
                                 </tr>
-                                <tr>
+                                <tr style="display: none;">
                                     <td>Mortalitate</td>
-                                    <td id="somaj"></td>
+                                    <td id="mortalitate"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -57,7 +57,7 @@
                     <!-- <div id="divTitlu"><label id="titluHarta" for="ani"><br/></label></div> -->
                     <h3 id="divTitlu">
                         Harta Interactivă a României<br>
-                        <small id="titluHarta" class="text-muted">1991 - 2020</small>
+                        <small id="titluHarta" class="text-muted">1992 - 2020</small>
                     </h3>
                     <div id="svgHartaRomaniei" class="border border-secondary shadow-lg p-3 mb-5 bg-white rounded align-middle">
                         <div id="schimbDate" class="">
@@ -242,7 +242,7 @@
                             <circle cx="416.9" cy="151.6" id="2">
                             </circle>
                         </svg>
-                        <div id="legendaPop" class="legenda">
+                        <div id="legendaPop" class="legenda shadow">
                             <legend>Legendă</legend>
                             <ul class="legendLista">
                                 <li><span class="procentMinusUnu"></span> &lt;&nbsp;-1.00</li>
@@ -256,7 +256,7 @@
                                 <li><span class="procentUnu"></span> &gt;&nbsp;&nbsp;1.00</li>
                             </ul>
                         </div>
-                        <div id="legendaSnm" class="legenda">
+                        <div id="legendaSomaj" class="legenda shadow">
                             <legend>Legendă</legend>
                             <ul class="legendLista">
                                 <li><span class="procentSnmZeroUnu"></span> 0-1</li>
@@ -269,8 +269,34 @@
                                 <li><span class="procentSnmPesteSapte"></span> 7&gt;</li>
                             </ul>
                         </div>
+                        <div id="legendaNatalitate" class="legenda shadow">
+                            <legend>Legendă</legend>
+                            <ul class="legendLista">
+                                <li><span class="procentNatSapte"></span> &lt;7</li>
+                                <li><span class="procentNatSapteOpt"></span> 7-8</li>
+                                <li><span class="procentNatOptNoua"></span> 8-9</li>
+                                <li><span class="procentNatNouaZece"></span> 9-10</li>
+                                <li><span class="procentNatZece1"></span> 10-11</li>
+                                <li><span class="procentNatZece2"></span> 11-12</li>
+                                <li><span class="procentNatZece3"></span> 12-13</li>
+                                <li><span class="procentNatZeceP"></span> &gt;13</li>
+                            </ul>
+                        </div>
+                        <div id="legendaMortalitate" class="legenda shadow">
+                            <legend>Legendă</legend>
+                            <ul class="legendLista">
+                                <li><span class="procentMortZece"></span> &lt;10</li>
+                                <li><span class="procentMortZece1"></span> 10-11</li>
+                                <li><span class="procentMortZece2"></span> 11-12</li>
+                                <li><span class="procentMortZece3"></span> 12-13</li>
+                                <li><span class="procentMortZece4"></span> 13-14</li>
+                                <li><span class="procentMortZece5"></span> 14-15</li>
+                                <li><span class="procentMortZece6"></span> 15-16</li>
+                                <li><span class="procentMortZeceP"></span> &gt;16</li>
+                            </ul>
+                        </div>
                         <div class="slidecontainer">
-                            <input id="rangeAni" type="range" min="1991" max="2020" step="1" value="1991" name="ani" >
+                            <input id="rangeAni" type="range" min="1992" max="2020" step="1" value="1992" name="ani" >
                         </div>
                         <label id="labelAni" for="ani"><span id="spanAn"></span></label><br>
                         <span id="noData">Nu există suficiente date.</span>
