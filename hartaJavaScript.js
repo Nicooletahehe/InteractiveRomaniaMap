@@ -45,52 +45,27 @@ window.addEventListener('resize', function(event){
         vecheaLocatie.appendChild(tabel);
     }
 })
-//console.log(jsonData);
-//console.log(jsonData[1]);
+console.log(jsonData);
+console.log(jsonData[1]);
 
-// let butonSelectat = document.querySelectorAll("button");
-// console.log(butonSelectat);
-// for(let n=0;n<butonSelectat.length;n++){
-//     butonSelectat[n].addEventListener('click', function(){
-//         // console.log(butonSelectat[n].name);
-//         if(butonSelectat[n].name === "populatie"){
-//             console.log("populatie");
-//             myFiles.pop();
-//             myFiles.push("dateProcentuale.json");
-//             console.log(myFiles);
-//         } else if(butonSelectat[n].name === "somaj"){
-//             console.log("somaj");
-//             myFiles.pop();
-//             myFiles.push("somaj.json");
-//             console.log(myFiles);
-//         } else if(butonSelectat[n].name === "natalitate"){
-//             console.log("natalitate");
-//             myFiles.pop();
-//             myFiles.push("natalitate.json");
-//             console.log(myFiles);
-//         } else if(butonSelectat[n].name === "deces"){
-//             console.log("deces");
-//             myFiles.pop();
-//             myFiles.push("deces.json");
-//             console.log(myFiles);
-//         }
-//     })
-// }
-
-console.log(myFiles);
-
-function incarcDatePeJudet(e) {
+function incarcDatePeJudetPop(e) {
     let numeJudetSVG = judete[e].attributes[2].value;
+    console.log(myFiles);
     for (let j = 0; j < jsonData[2].length; j++) {
+        console.log("sau aici");
         if (jsonData[2][j][0] === numeJudetSVG) {
             // console.log(jsonData[2][j][0]);
+            console.log("aproape");
             if (slider.value <= 1992) {
+                console.log("coloreaza");
                 judete[e].style.fill = 'rgb(' + 124 + ',' + 124 + ',' + 124 + ')';
                 document.querySelector("#noData").style.display = 'block';
             }
             else {
+                console.log("al doilea coloreaza");
                 document.querySelector("#noData").style.display = 'none';
                 let procentData = jsonData[2][j][slider.value - 1992]
+                console.log(procentData);
                 if (procentData < -1) {
                     judete[e].style.fill = "#0C1C41";
                 }
@@ -124,16 +99,133 @@ function incarcDatePeJudet(e) {
     }
 }
 
-//slider
-output.innerHTML = slider.value;
-slider.oninput = function () {
+function incarcDatePeJudet(e) {
+    let numeJudetSVG = judete[e].attributes[2].value;
+    console.log(myFiles);
+    for (let j = 0; j < jsonData[2].length; j++) {
+        console.log("sau aici");
+        if (jsonData[2][j][0] === numeJudetSVG) {
+            // console.log(jsonData[2][j][0]);
+            console.log("aproape");
+            if (slider.value <= 1991 || slider.value == 2020) {
+                console.log("coloreaza");
+                judete[e].style.fill = 'rgb(' + 124 + ',' + 124 + ',' + 124 + ')';
+                document.querySelector("#noData").style.display = 'block';
+            }
+            else {
+                console.log("al doilea coloreaza");
+                document.querySelector("#noData").style.display = 'none';
+                let procentData = jsonData[2][j][slider.value - 1991]
+                console.log(procentData);
+                if (procentData < -1) {
+                    judete[e].style.fill = "#0C1C41";
+                }
+                else if (procentData < -0.3) {
+                    judete[e].style.fill = "#20325E";
+                }
+                else if (procentData < - 0.2) {
+                    judete[e].style.fill = "#364975";
+                }
+                else if (procentData < -0.1) {
+                    judete[e].style.fill = "#566890";
+                }
+                else if (procentData >= -0.1 && procentData <= 0.1) {
+                    judete[e].style.fill = "#AFAF45";
+                }
+                else if (procentData > 1) {
+                    judete[e].style.fill = "#610808";
+                }
+                else if (procentData > 0.3) {
+                    judete[e].style.fill = "#8C2424";
+                }
+                else if (procentData > 0.2) {
+                    judete[e].style.fill = "#AF4545";
+                }
+                else if (procentData > 0.1) {
+                    judete[e].style.fill = "#D77777";
+                }
+            }
+            break;
+        }
+    }
+}
+
+function sliderAction() {
     tabel.style.display = "none";
     judetSelectat = null;
     judetHoverat = null;
-    output.innerHTML = this.value;
+    output.innerHTML = slider.value;
     for (let i = 0; i < judete.length; i++) {
-        incarcDatePeJudet(i);
+        incarcDatePeJudetPop(i);
     }
+}
+
+let butonSelectat = document.querySelectorAll("button");
+console.log(butonSelectat);
+for(let n=0;n<butonSelectat.length;n++){
+    butonSelectat[n].addEventListener('click', function(){
+        // console.log(butonSelectat[n].name);
+        if(butonSelectat[n].name === "populatie"){
+            console.log("populatie");
+            myFiles.pop();
+            myFiles.push("dateProcentuale.json");
+            myFiles.forEach(function (file, i) {
+                loadFile(file, function (responseText) {
+                    jsonData[i] = JSON.parse(responseText);
+                });
+            });
+            for (let i = 0; i < judete.length; i++) {
+                incarcDatePeJudetPop(i);
+            }
+            console.log(myFiles);
+        } else if(butonSelectat[n].name === "somaj"){
+            console.log("somaj");
+            myFiles.pop();
+            myFiles.push("somaj.json");
+            myFiles.forEach(function (file, i) {
+                loadFile(file, function (responseText) {
+                    jsonData[i] = JSON.parse(responseText);
+                });
+            });
+            for (let i = 0; i < judete.length; i++) {
+                incarcDatePeJudet(i);
+            }
+            
+            console.log(myFiles);
+        } else if(butonSelectat[n].name === "natalitate"){
+            console.log("natalitate");
+            myFiles.pop();
+            myFiles.push("natalitate.json");
+            myFiles.forEach(function (file, i) {
+                loadFile(file, function (responseText) {
+                    jsonData[i] = JSON.parse(responseText);
+                });
+            });
+            for (let i = 0; i < judete.length; i++) {
+                incarcDatePeJudet(i);
+            }
+            console.log(myFiles);
+        } else if(butonSelectat[n].name === "mortalitate"){
+            console.log("mortalitate");
+            myFiles.pop();
+            myFiles.push("mortalitate.json");
+            myFiles.forEach(function (file, i) {
+                loadFile(file, function (responseText) {
+                    jsonData[i] = JSON.parse(responseText);
+                });
+            });
+            for (let i = 0; i < judete.length; i++) {
+                incarcDatePeJudet(i);
+            }
+            console.log(myFiles);
+        }
+    })
+}
+
+//slider
+output.innerHTML = slider.value;
+slider.oninput = function () {
+    sliderAction();
 }
 
 let valoareSlider = document.querySelectorAll("#rangeAni")[0].value;
@@ -172,7 +264,6 @@ function loadTable(e){
                         let jsonSuprafataZecimal = parseFloat(jsonData[0][z].date[j].densitate.replace(/,/g, '.')).toFixed(2);
                         densitateTabel.innerHTML = jsonSuprafataZecimal + '/km2';
                     }
-                    
                     somajTabel.innerHTML = jsonSomSeparator;
                     anTabel.innerHTML = jsonData[0][z].an;
                 }
