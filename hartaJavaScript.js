@@ -2,6 +2,7 @@ let judete = document.querySelectorAll("path");
 let tabel = document.querySelector("#tabelJudet");
 var slider = document.getElementById("rangeAni");
 var output = document.getElementById("spanAn");
+var descriere = document.getElementById("textDescriereLegenda");
 
 let request;
 let dataJudet = [];
@@ -120,28 +121,28 @@ function incarcDatePeJudetSomaj(e) {
                 document.querySelector("#noData").style.display = 'none';
                 let procentData = jsonData[indexJson][j][slider.value - 1991]
                 // console.log(procentData);
-                if (procentData < 1 && procentData > 0) {
+                if (procentData < 1 && procentData >= 0) {
                     judete[e].style.fill = "#1A8C17";
                 }
-                else if (procentData < 2 && procentData > 1) {
+                else if (procentData < 2 && procentData >= 1) {
                     judete[e].style.fill = "#4DA345";
                 }
-                else if (procentData < 3 && procentData > 2) {
+                else if (procentData < 3 && procentData >= 2) {
                     judete[e].style.fill = "#B3D2A1";
                 }
-                else if (procentData < 4 && procentData > 3) {
+                else if (procentData < 4 && procentData >= 3) {
                     judete[e].style.fill = "#E6E9CF";
                 }
-                else if (procentData < 5 && procentData > 4) {
+                else if (procentData < 5 && procentData >= 4) {
                     judete[e].style.fill = "#FFDCCF";
                 }
-                else if (procentData < 6 && procentData > 5) {
+                else if (procentData < 6 && procentData >= 5) {
                     judete[e].style.fill = "#FF7B73";
                 }
-                else if (procentData < 7 && procentData > 6) {
+                else if (procentData < 7 && procentData >= 6) {
                     judete[e].style.fill = "#FF4A45";
                 }
-                else if (procentData > 7) {
+                else if (procentData >= 7) {
                     judete[e].style.fill = "#FF1917";
                 }
             }
@@ -172,25 +173,25 @@ function incarcDatePeJudetNatalitate(e) {
                 if (procentData > 13) {
                     judete[e].style.fill = "#1A8C17";
                 }
-                else if (procentData < 13 && procentData > 12) {
+                else if (procentData <= 13 && procentData > 12) {
                     judete[e].style.fill = "#4DA345";
                 }
-                else if (procentData < 12 && procentData > 11) {
+                else if (procentData <= 12 && procentData > 11) {
                     judete[e].style.fill = "#B3D2A1";
                 }
-                else if (procentData < 11 && procentData > 10.00) {
+                else if (procentData <= 11 && procentData > 10.00) {
                     judete[e].style.fill = "#E6E9CF";
                 }
-                else if (procentData < 10 && procentData > 9) {
+                else if (procentData <= 10 && procentData > 9) {
                     judete[e].style.fill = "#FFDCCF";
                 }
-                else if (procentData < 9 && procentData > 8) {
+                else if (procentData <= 9 && procentData > 8) {
                     judete[e].style.fill = "#FF7B73";
                 }
-                else if (procentData < 8 && procentData > 7) {
+                else if (procentData <= 8 && procentData > 7) {
                     judete[e].style.fill = "#FF4A45";
                 }
-                else if (procentData < 7) {
+                else if (procentData <= 7) {
                     judete[e].style.fill = "#FF1917";
                 }
             }
@@ -220,25 +221,25 @@ function incarcDatePeJudetMortalitate(e) {
                 if (procentData < 10) {
                     judete[e].style.fill = "#1A8C17";
                 }
-                else if (procentData < 11 && procentData > 10) {
+                else if (procentData < 11 && procentData >= 10) {
                     judete[e].style.fill = "#4DA345";
                 }
-                else if (procentData < 12 && procentData > 11) {
+                else if (procentData < 12 && procentData >= 11) {
                     judete[e].style.fill = "#B3D2A1";
                 }
-                else if (procentData < 13 && procentData > 12) {
+                else if (procentData < 13 && procentData >= 12) {
                     judete[e].style.fill = "#E6E9CF";
                 }
-                else if (procentData < 14 && procentData > 13) {
+                else if (procentData < 14 && procentData >= 13) {
                     judete[e].style.fill = "#FFDCCF";
                 }
-                else if (procentData < 15 && procentData > 14) {
+                else if (procentData < 15 && procentData >= 14) {
                     judete[e].style.fill = "#FF7B73";
                 }
-                else if (procentData < 16 && procentData > 15) {
+                else if (procentData < 16 && procentData >= 15) {
                     judete[e].style.fill = "#FF4A45";
                 }
-                else if (procentData > 16) {
+                else if (procentData >= 16) {
                     judete[e].style.fill = "#FF1917";
                 }
             }
@@ -285,6 +286,7 @@ for(let n=0;n<butonSelectat.length;n++){
             for (let i = 0; i < judete.length; i++) {
                 incarcDatePeJudetPop(i);
             }
+            descriere.textContent = "Diferența % a populației față de anul anterior";
             document.querySelector("#legendaPop").style.display = "block";
             document.querySelector("#legendaSomaj").style.display = "none";
             document.querySelector("#legendaNatalitate").style.display = "none";
@@ -297,6 +299,7 @@ for(let n=0;n<butonSelectat.length;n++){
             for (let i = 0; i < judete.length; i++) {
                 incarcDatePeJudetSomaj(i);
             }
+            descriere.textContent = "Rata șomajului la 100 de locuitori";
             document.querySelector("#legendaPop").style.display = "none";
             document.querySelector("#legendaSomaj").style.display = "block";
             document.querySelector("#legendaNatalitate").style.display = "none";
@@ -308,6 +311,7 @@ for(let n=0;n<butonSelectat.length;n++){
             for (let i = 0; i < judete.length; i++) {
                 incarcDatePeJudetNatalitate(i);
             }
+            descriere.textContent = "Rata natalității la 1000 de locuitori";
             document.querySelector("#legendaPop").style.display = "none";
             document.querySelector("#legendaSomaj").style.display = "none";
             document.querySelector("#legendaNatalitate").style.display = "block";
@@ -319,6 +323,7 @@ for(let n=0;n<butonSelectat.length;n++){
             for (let i = 0; i < judete.length; i++) {
                 incarcDatePeJudetMortalitate(i);
             }
+            descriere.textContent = "Rata mortalității la 1000 de locuitori";
             document.querySelector("#legendaPop").style.display = "none";
             document.querySelector("#legendaSomaj").style.display = "none";
             document.querySelector("#legendaNatalitate").style.display = "none";
