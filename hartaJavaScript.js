@@ -384,12 +384,12 @@ function loadTable(e){
                     if(jsonData[0][z].date[j].natalitate === 0 || jsonData[0][z].date[j].populatie === 0){
                         natalitateTabel.innerHTML = "Nu avem date de referință.";
                     } else {
-                        natalitateTabel.innerHTML = parseFloat(jsonData[0][z].date[j].natalitate/jsonData[0][z].date[j].populatie*1000).toFixed(2) + "%";
+                        natalitateTabel.innerHTML = parseFloat(jsonData[0][z].date[j].natalitate/jsonData[0][z].date[j].populatie*1000).toFixed(2) + "‰";
                     }
                     if(jsonData[0][z].date[j].mortalitate === 0 || jsonData[0][z].date[j].populatie === 0){
                         mortalitateTabel.innerHTML = "Nu avem date de referință.";
                     } else {
-                        mortalitateTabel.innerHTML = parseFloat(jsonData[0][z].date[j].mortalitate/jsonData[0][z].date[j].populatie*1000).toFixed(2) + "%";
+                        mortalitateTabel.innerHTML = parseFloat(jsonData[0][z].date[j].mortalitate/jsonData[0][z].date[j].populatie*1000).toFixed(2) + "‰";
                     }
                     anTabel.innerHTML = jsonData[0][z].an;
                 }
