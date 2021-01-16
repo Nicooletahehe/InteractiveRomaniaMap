@@ -1,5 +1,5 @@
 # InteractiveRomaniaMap
-<a href="https://nicooletahehe.github.io/InteractiveRomaniaMap/">Harta Interactivă a RomânieI</a>
+<a href="https://nicooletahehe.github.io/InteractiveRomaniaMap/">Harta Interactivă a României</a>
 <ul>
   <li>Prin acest proiect ne-am dorit să evidențiem evoluția populației României pe perioada 1992-2020, luând în calcul și ratele șomajului, natalității și mortalității.</li>
   <li>Datele sunt încadrate între anii 1992-2020, deoarece nu am putut găsi date complete pe județe înainte de această perioadă.</li>
